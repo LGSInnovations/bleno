@@ -141,6 +141,19 @@ bleno.startAdvertisingWithEIRData(advertisementData[, scanData, callback(error)]
 ```
 
   * For EIR format section [Bluetooth Core Specification](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=229737) sections and 8 and 18 for more information the data format.
+  
+##### Start advertising AltBeacon (__Linux only__)
+
+```javascript
+var manufacturerId = 0x0001; // 0x0000 - 0xFFFF
+var beaconId = 'e2c56db5dffb48d2b060d0f5a71096e0';
+var referenceRssi = 0; // -127 to 0
+var manufacturerReserved = 0x00; // 0x00 - 0xFF
+
+bleno.startAdvertisingAltBeacon(manufacturerId, beaconId, referenceRssi, manufacturerReserved, [, callback(error)]);
+```
+
+  * See the [AltBeacon](https://http://altbeacon.org/) spec for more information the data format.
 
 ##### Stop advertising
 
